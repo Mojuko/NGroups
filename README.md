@@ -39,7 +39,7 @@
 - "Show current layer" display raw layer data that updates real-time by any action.
 - "Show all layers" display final result of layers blending.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/LayersVisualization.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/LayersVisualization.gif)
 
 ### Layers blending and smooth tools
 - To set blending weight for selected loops, use "Corner weight" value and press "Assign". Blending use saved normals, that was stored, when NGroups was applied to mesh button "Apply mesh normals" pressed.
