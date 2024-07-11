@@ -13,27 +13,26 @@
 3. Under the "Layers" tab press plus sign button to add layer.
 4. Select vertices or faces and press "Assign" button.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/HowToUse.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/HowToUse.gif)
 
 ### Selection dependency
 - By assigning/removing vertex, all its linked loops (face corners) will be assigned.
 - By assigning/removing face, all face loops (corners) will be assigned, this creates split normals on edges.
 - To assign separate loop (face corner) combine selection modes with assign/remove.
 
-
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/SelectionDependency.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/SelectionDependency.gif)
 
 ### Data computation and mesh operations
 - "Apply mesh normals" This button used to apply normals to mesh. This normals will be NOT removed by remove data.
 - When NGroups created mesh normals will be automatically stored as base layer to change it use "Apply mesh normals".
 - "Remove NGroups data" used to remove all data that stored in mesh.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/DataRemoveAndApply.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/DataRemoveAndApply.gif)
 
 - Not all actions automatically update data, to perform update press "Compute result".
 - "Update mesh normals" used to set mesh normals based on computed result. This normals will be removed if not applied to mesh.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/DataUpdate.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/DataUpdate.gif)
 
 ### Layers visualization
 - To enable visual display, press "Toggle layers display" and set shading mode to "Material Preview". Materials used by mesh will be reverted back, once visualization will be toggled.
@@ -48,7 +47,7 @@
 - Blending use slerp for final vectors and lerp for color display.
 - "Smooth Brush" (To change size press "F" keyboard button) and "Smooth selection" computes average weight from neighbor vertices.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/BlendingAndSmooth.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/LayersVisualization.gif)
 
 ### Vector layers
 
@@ -62,11 +61,11 @@
 
 Vector from same normal layer, will override other vector, if assigned to the same loops (corners).
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/Vector.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/Vector.gif)
 
 ### Mirror
 - Before using mirror for layers press "Compute mirrors".
 - Mesh change will require mirror computation once again.
 - Mirror might cause errors.
 
-![](https://github.com/Mojuko/NGroupsGifs/blob/main/Mirror.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/Mirror.gif)
