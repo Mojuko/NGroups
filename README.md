@@ -11,4 +11,4 @@
 3. Under the "Layers" tab press pluss sign button to add layer.
 4. Select vertices or faces and press "Assign" button.
 
-![](https://github.com/Mojuko/NGroups/HowToUse.gif)
+![](HowToUse.gif)
