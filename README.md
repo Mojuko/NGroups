@@ -47,7 +47,7 @@
 - Blending use slerp for final vectors and lerp for color display.
 - "Smooth Brush" (To change size press "F" keyboard button) and "Smooth selection" computes average weight from neighbor vertices.
 
-![](https://github.com/Mojuko/NGroups/blob/Gifs/LayersVisualization.gif)
+![](https://github.com/Mojuko/NGroups/blob/Gifs/BlendingAndSmooth.gif)
 
 ### Vector layers
 
