@@ -220,18 +220,18 @@ class NGROUPS_PT_main(Panel):
                 
                         
                 
-        elif NGROUPS_PT_main.EditedObject != None and NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
-
-            obj = NGROUPS_PT_main.EditedObject
-            mesh = obj.data
-            variables = mesh.NGroups
-            row = layout.row()
-            row.prop(variables, 'NormalDistance')
-            row = layout.row()
-            row.operator('ngroups.flip_normals', text = 'Flip normals')
-            row = layout.row()
-            row.operator('ngroups.apply_vector', text = 'Apply')
-            row.operator('ngroups.cancel_vector', text = 'Cancel')
+        elif NGROUPS_PT_main.EditedObject != None:
+            if NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
+                obj = NGROUPS_PT_main.EditedObject
+                mesh = obj.data
+                variables = mesh.NGroups
+                row = layout.row()
+                row.prop(variables, 'NormalDistance')
+                row = layout.row()
+                row.operator('ngroups.flip_normals', text = 'Flip normals')
+                row = layout.row()
+                row.operator('ngroups.apply_vector', text = 'Apply')
+                row.operator('ngroups.cancel_vector', text = 'Cancel')
                 
             
             
