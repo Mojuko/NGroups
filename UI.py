@@ -67,10 +67,13 @@ class NGROUPS_PT_main(Panel):
         if obj != None and bpy.context.active_object.mode == "EDIT":
             return True
         elif NGROUPS_PT_main.EditedObject != None:
-            if NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
-                return True
+            try:
+                if NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
+                    return True
+            except :
+                return False
         else:
-            return False
+            return False 
 
 
     def draw(self, context):
@@ -221,7 +224,7 @@ class NGROUPS_PT_main(Panel):
                         
                 
         elif NGROUPS_PT_main.EditedObject != None:
-            if NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
+            try:
                 obj = NGROUPS_PT_main.EditedObject
                 mesh = obj.data
                 variables = mesh.NGroups
@@ -232,6 +235,8 @@ class NGROUPS_PT_main(Panel):
                 row = layout.row()
                 row.operator('ngroups.apply_vector', text = 'Apply')
                 row.operator('ngroups.cancel_vector', text = 'Cancel')
+            except :
+                pass
                 
             
             
