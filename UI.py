@@ -64,10 +64,13 @@ class NGROUPS_PT_main(Panel):
     @classmethod
     def poll(self, context):
         obj = context.active_object
-        if obj != None and (bpy.context.active_object.mode == "EDIT" or (NGROUPS_PT_main.EditedObject != None and NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject)):
+        if obj != None and bpy.context.active_object.mode == "EDIT":
             return True
+        elif NGROUPS_PT_main.EditedObject != None:
+            if NGROUPS_PT_main.EditedObject.data.NGroups.HoldObject:
+                return True
         else:
-            return False 
+            return False
 
 
     def draw(self, context):
