@@ -5,6 +5,10 @@
 4. Visual representation of Layers.
 5. Mirror support.
 
+## Compute update
+Unassigned loop (factor == 0) normal will not be overridden
+If you need override, assign to empty vector layer
+
 ## Angle counts in counterclockwise direction around Z axis
 
 ### How to use?

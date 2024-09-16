@@ -474,6 +474,9 @@ def ComputeResult(mesh):
         for loop in loops:
             resultColor = defaultColor
             resultNormal = loop[baseNormalsLayer].copy()
+
+            emptyLoop = True
+
             for i, groupLayer in enumerate(groupLayers):
                 if visibility[i] != True:
                     continue
@@ -501,6 +504,8 @@ def ComputeResult(mesh):
             
                 if factor == 0:
                     continue
+                else:
+                    emptyLoop = False
             
                 if isVector[i] == False:
                     hasData = True
@@ -540,7 +545,11 @@ def ComputeResult(mesh):
                 resultNormal = resultNormal.slerp(normal, factor, normal)
                 color = colors[i]
                 resultColor = LerpList(resultColor, color, factor)
+            
+            if (emptyLoop):
+                resultNormal = (0,0,0)
             loop[colorLayer] = resultColor
+
             loop[resultNormalsLayer] = resultNormal
     
         bmesh.update_edit_mesh(mesh)
@@ -555,13 +564,20 @@ def SetMeshNormals_MODETOGGLE(mesh):
     SetMeshNormalsFromAttribute_MODETOGGLE(mesh, Data.ResultNormalsAttribute[0])
 
 def SetMeshNormalsFromAttribute_MODETOGGLE(mesh, attributeName):
+
+    bpy.ops.object.mode_set(mode='OBJECT', toggle=False)
+    currentNormals = GetAllNormals(mesh)
+    bpy.ops.object.mode_set(mode='EDIT', toggle=False)
+
     bm = bmesh.from_edit_mesh(mesh)
-    
     layer = GetBmeshLoopVectorLayer(bm, attributeName)
     loops = GetAllLoops(bm)
     normals = []
-    for loop in loops:
-        normals.append(loop[layer])
+    for i, loop in enumerate(loops):
+        if (loop[layer].length <= 0.0):
+            normals.append(currentNormals[i].to_tuple())
+        else:
+            normals.append(loop[layer])
     
     bmesh.update_edit_mesh(mesh)
     bm.free()
